@@ -27,20 +27,20 @@ export const PageGaleri: React.FC = () => {
 
         {/* Gallery Grid */}
         <div className="w-full grid grid-cols-2 gap-2">
-          <div className="col-span-2 rounded-[14px] overflow-hidden h-[220px]">
-            <img src={photos[0]} alt="Gallery 1" className="w-full h-full object-cover hover:scale-105 transition-transform duration-700" />
+          <div className="col-span-2 rounded-[14px] overflow-hidden">
+            <img src={photos[0]} alt="Gallery 1" className="w-full h-auto object-cover hover:scale-105 transition-transform duration-700" />
           </div>
-          <div className="rounded-[14px] overflow-hidden h-[160px]">
-            <img src={photos[1]} alt="Gallery 2" className="w-full h-full object-cover hover:scale-105 transition-transform duration-700" />
+          <div className="rounded-[14px] overflow-hidden">
+            <img src={photos[1]} alt="Gallery 2" className="w-full h-auto object-cover hover:scale-105 transition-transform duration-700" />
           </div>
-          <div className="rounded-[14px] overflow-hidden h-[160px]">
-            <img src={photos[2]} alt="Gallery 3" className="w-full h-full object-cover hover:scale-105 transition-transform duration-700" />
+          <div className="rounded-[14px] overflow-hidden">
+            <img src={photos[2]} alt="Gallery 3" className="w-full h-auto object-cover hover:scale-105 transition-transform duration-700" />
           </div>
-          <div className="rounded-[14px] overflow-hidden h-[160px]">
-            <img src={photos[2]} alt="Gallery 4" className="w-full h-full object-cover hover:scale-105 transition-transform duration-700" />
+          <div className="rounded-[14px] overflow-hidden">
+            <img src={photos[2]} alt="Gallery 4" className="w-full h-auto object-cover hover:scale-105 transition-transform duration-700" />
           </div>
-          <div className="rounded-[14px] overflow-hidden h-[160px]">
-            <img src={photos[1]} alt="Gallery 5" className="w-full h-full object-cover hover:scale-105 transition-transform duration-700" />
+          <div className="rounded-[14px] overflow-hidden">
+            <img src={photos[1]} alt="Gallery 5" className="w-full h-auto object-cover hover:scale-105 transition-transform duration-700" />
           </div>
         </div>
       </div>
