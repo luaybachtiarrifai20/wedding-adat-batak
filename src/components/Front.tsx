@@ -1,4 +1,7 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
+import { useSearchParams } from "react-router-dom";
+import { collection, query, where, getDocs } from "firebase/firestore";
+import { db } from "../firebaseConfig";
 import bgAll from "../assets/25DK702-BG-ALL.jpg";
 import ornamentDayak from "../assets/25DK702-DAYAK.png";
 import couplePhoto from "../assets/kaesang-gudono-1-e1766729171733.jpg";
@@ -8,6 +11,34 @@ interface FrontProps {
 }
 
 export const Front: React.FC<FrontProps> = ({ onOpen }) => {
+  const [searchParams] = useSearchParams();
+  const [guestName, setGuestName] = useState("Nama Tamu");
+  const [loading, setLoading] = useState(true);
+
+  useEffect(() => {
+    const fetchGuestName = async () => {
+      const toParam = searchParams.get("to");
+      if (toParam) {
+        try {
+          const guestsRef = collection(db, "guests");
+          const q = query(
+            guestsRef,
+            where("invitationLink", "==", `https://wedding-invitation.com/to/${toParam}`)
+          );
+          const querySnapshot = await getDocs(q);
+          if (!querySnapshot.empty) {
+            const guestDoc = querySnapshot.docs[0];
+            setGuestName(guestDoc.data().name);
+          }
+        } catch (error) {
+          console.error("Error fetching guest:", error);
+        }
+      }
+      setLoading(false);
+    };
+
+    fetchGuestName();
+  }, [searchParams]);
   return (
     <div 
       className="relative w-full h-[100dvh] flex flex-col items-center justify-center font-sans overflow-hidden"
@@ -72,7 +103,7 @@ export const Front: React.FC<FrontProps> = ({ onOpen }) => {
               Kepada Yth :
             </p>
             <p className="font-['Poppins'] text-[17px] text-[#F8BB63]">
-              Nama Tamu
+              {loading ? 'Memuat...' : guestName}
             </p>
           </div>
           
