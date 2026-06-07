@@ -31,7 +31,7 @@ export const Front: React.FC<FrontProps> = ({ onOpen }) => {
           if (!querySnapshot.empty) {
             const guestDoc = querySnapshot.docs[0];
             setGuestName(guestDoc.data().name);
-            console.log("Found guest by invitationLink:", guestDoc.data().name);
+            // console.log("Found guest by invitationLink:", guestDoc.data().name);
           } else {
             // If not found by invitationLink, try to find by name (convert slug back to name)
             const nameFromSlug = toParam.split('-').map((word: string) => 
@@ -91,7 +91,7 @@ export const Front: React.FC<FrontProps> = ({ onOpen }) => {
           <div 
             className="absolute inset-0"
             style={{
-              backgroundImage: `url(${weddingConfig.couple.photo})`,
+              backgroundImage: `url(${weddingConfig.front.photo})`,
               backgroundSize: 'cover',
               backgroundPosition: 'top center'
             }}

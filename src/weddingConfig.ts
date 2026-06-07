@@ -1,3 +1,4 @@
+import frontPhoto from './assets/vektor-dayak-eye-teeth.webp';
 import couplePhoto from './assets/couple.png';
 import photoGroom from './assets/cowok01.jpeg';
 import photoBride from './assets/cewek01.jpeg';
@@ -6,6 +7,12 @@ import photo2 from './assets/cewek01.jpeg';
 import photo3 from './assets/cowok01.jpeg';
 
 export const weddingConfig = {
+  // Front
+  front: {
+    names: 'Karta & Asih',
+    photo: frontPhoto,
+  },
+
   // Couple Section
   couple: {
     names: 'Karta & Asih',
@@ -39,14 +46,14 @@ export const weddingConfig = {
       date: 'Minggu, 26 Juli 2026',
       time: '13.00 WIB s/d Selesai',
       location: 'Rumah Kediaman Ibu Ancela susilawati (Sui Jawa)',
-      mapsUrl: 'https://maps.app.goo.gl/PTNeCWsfhzkpH9Ww9',
+      mapsUrl: 'https://maps.app.goo.gl/3hL7MxwyeR7TkJ3D9',
     },
     resepsi: {
       title: 'Resepsi Pernikahan',
       date: 'Minggu, 26 Juli 2026',
       time: '13.00 WIB s/d Selesai',
       location: 'Rumah Kediaman Ibu Ancela susilawati (Sui Jawa)',
-      mapsUrl: 'https://maps.app.goo.gl/PTNeCWsfhzkpH9Ww9',
+      mapsUrl: 'https://maps.app.goo.gl/3hL7MxwyeR7TkJ3D9',
     },
   },
 
@@ -75,7 +82,7 @@ export const weddingConfig = {
     },
     giftShipping: {
       recipientName: 'Karta',
-      phoneNumber: '0815xxxx',
+      phoneNumber: '081350391523',
       address: 'Jln Trans Kalimantan Dusun Jaya Paraya Desa Korek',
     },
   },

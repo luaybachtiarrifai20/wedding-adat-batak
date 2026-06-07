@@ -22,7 +22,7 @@ const useCountdown = (target: Date): TimeLeft => {
       detik: Math.floor((diff % 60000) / 1000),
     };
   };
-  const [timeLeft, setTimeLeft] = useState<TimeLeft>(calc());
+  const [timeLeft, setTimeLeft] = useState<TimeLeft>(() => calc());
   useEffect(() => {
     const timer = setInterval(() => setTimeLeft(calc()), 1000);
     return () => clearInterval(timer);
@@ -146,7 +146,7 @@ export const PageAcara: React.FC = () => {
         </div>
 
         <p className="reveal text-white text-[13px] text-center leading-relaxed" style={{ fontFamily: "Poppins, sans-serif" }}>
-          Dengan mengucap puji dan syukur kepada Allah SWT, kami bermaksud mengundang Anda untuk dapat menghadiri acara pernikahan kami yang akan dilaksanakan pada:
+          Karena Kasih-Nya, bersama ini kami mengundang Bapak/Ibu/Saudara/i untuk hadir dalam acara adat (Gawe Adat) pernikahan kami yang akan dilaksanakan pada:
         </p>
 
         <EventCard
