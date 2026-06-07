@@ -52,7 +52,7 @@ export const PagePenutup: React.FC = () => {
             className="text-white text-[12px]"
             style={{ fontFamily: 'Poppins, sans-serif' }}
           >
-            Made with ❤️ by Wekita.id
+            Made with ❤️ by Libraayra
           </p>
 
           <div className="flex gap-4">
