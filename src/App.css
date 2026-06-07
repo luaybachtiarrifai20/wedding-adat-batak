@@ -1,0 +1,89 @@
+/* ========== ANIMATIONS ========== */
+
+/* Slide in from bottom when content page opens */
+@keyframes slideIn {
+  from {
+    opacity: 0;
+    transform: translateY(60px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Fade in from top */
+@keyframes fadeInDown {
+  from {
+    opacity: 0;
+    transform: translateY(-30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Fade in from bottom */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Simple fade in */
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to   { opacity: 1; }
+}
+
+/* Zoom in */
+@keyframes zoomIn {
+  from {
+    opacity: 0;
+    transform: scale(0.75);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+/* ========== UTILITY CLASSES ========== */
+
+.animate-slideIn {
+  animation: slideIn 0.7s cubic-bezier(0.22, 1, 0.36, 1) both;
+}
+
+.animate-fadeIn {
+  animation: fadeIn 0.8s ease both;
+}
+
+.animate-fadeInDown {
+  animation: fadeInDown 0.9s ease both;
+}
+
+.animate-fadeInUp {
+  animation: fadeInUp 0.8s ease both;
+  animation-delay: 0.2s;
+}
+
+.animate-zoomIn {
+  animation: zoomIn 0.8s ease both;
+}
+
+/* Intersection observer reveal: elements start hidden */
+.reveal {
+  opacity: 0;
+  transform: translateY(40px);
+  transition: opacity 0.7s ease, transform 0.7s ease;
+}
+.reveal.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
