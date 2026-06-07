@@ -21,17 +21,38 @@ export const Front: React.FC<FrontProps> = ({ onOpen }) => {
       if (toParam) {
         try {
           const guestsRef = collection(db, "guests");
+          // Try to find by invitationLink first
           const q = query(
             guestsRef,
-            where("invitationLink", "==", `https://wedding-invitation.com/to/${toParam}`)
+            where("invitationLink", "==", `https://wedding-adat-batak.vercel.app/?to=${toParam}`)
           );
           const querySnapshot = await getDocs(q);
+          
           if (!querySnapshot.empty) {
             const guestDoc = querySnapshot.docs[0];
             setGuestName(guestDoc.data().name);
+            console.log("Found guest by invitationLink:", guestDoc.data().name);
+          } else {
+            // If not found by invitationLink, try to find by name (convert slug back to name)
+            const nameFromSlug = toParam.split('-').map((word: string) => 
+              word.charAt(0).toUpperCase() + word.slice(1)
+            ).join(' ');
+            
+            const q2 = query(guestsRef, where("name", "==", nameFromSlug));
+            const querySnapshot2 = await getDocs(q2);
+            
+            if (!querySnapshot2.empty) {
+              const guestDoc = querySnapshot2.docs[0];
+              setGuestName(guestDoc.data().name);
+              console.log("Found guest by name:", guestDoc.data().name);
+            } else {
+              console.warn("Guest not found for:", toParam, "or name:", nameFromSlug);
+              setGuestName("Tamu Terhormat");
+            }
           }
         } catch (error) {
           console.error("Error fetching guest:", error);
+          setGuestName("Tamu Terhormat");
         }
       }
       setLoading(false);
