@@ -1,10 +1,11 @@
 import React from "react";
 import bgAll from "../assets/25DK702-BG-ALL.jpg";
 import ornamentAB from "../assets/25DK702-ORNAMEN-AB-scaled-e1765876061184.png";
-import couplePhoto from "../assets/kaesang-gudono-1-e1766729171733.jpg";
 import framePro from "../assets/25DK702-FRAME-PRO.png";
+import { weddingConfig } from "../weddingConfig";
 
 export const PageCouple: React.FC = () => {
+  const { names, date, photo } = weddingConfig.couple;
   return (
     <section
       className="relative w-full min-h-screen flex flex-col items-center justify-start overflow-hidden"
@@ -34,8 +35,8 @@ export const PageCouple: React.FC = () => {
           }}
         >
           <img
-            src={couplePhoto}
-            alt="Kaesang & Erina"
+            src={photo}
+            alt={names}
             className="w-full h-full object-cover object-top"
           />
         </div>
@@ -61,13 +62,13 @@ export const PageCouple: React.FC = () => {
           className="text-[#F8BB63] text-[40px] font-normal mb-3"
           style={{ fontFamily: "Philosopher, sans-serif" }}
         >
-          Kaesang & Erina
+          {names}
         </h1>
         <p
           className="text-white text-[12px] uppercase tracking-widest"
           style={{ fontFamily: "Poppins, sans-serif" }}
         >
-          Minggu, 25 Januari 2026
+          {date}
         </p>
       </div>
 

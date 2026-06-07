@@ -2,9 +2,11 @@ import React from 'react';
 import bgPanjang from '../assets/25DK702-BG-ALL.jpg';
 import ornamentOrnamen from '../assets/25DK702-ORNAMEN-AB-scaled-e1765876061184.png';
 import { useScrollReveal } from '../hooks/useScrollReveal';
+import { weddingConfig } from '../weddingConfig';
 
 export const PagePenutup: React.FC = () => {
   const sectionRef = useScrollReveal();
+  const { names, socialMedia } = weddingConfig.penutup;
 
   return (
     <section
@@ -38,7 +40,7 @@ export const PagePenutup: React.FC = () => {
           className="reveal text-[#F8BB63] text-[28px] font-normal"
           style={{ fontFamily: 'Imperial Script, cursive' }}
         >
-          Kaesang & Erina
+          {names}
         </h2>
 
         <div className="reveal w-full h-[30px]"></div>
@@ -55,7 +57,7 @@ export const PagePenutup: React.FC = () => {
 
           <div className="flex gap-4">
             <a
-              href="https://www.instagram.com/wekita.id/"
+              href={socialMedia.instagram}
               target="_blank"
               rel="noopener noreferrer"
               className="text-[#F8BB63] hover:opacity-80 transition-opacity"
@@ -65,7 +67,7 @@ export const PagePenutup: React.FC = () => {
               </svg>
             </a>
             <a
-              href="https://wa.me/message/46S77EFCZCJAN1"
+              href={socialMedia.whatsapp}
               target="_blank"
               rel="noopener noreferrer"
               className="text-[#F8BB63] hover:opacity-80 transition-opacity"

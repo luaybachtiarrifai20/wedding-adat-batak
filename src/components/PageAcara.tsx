@@ -2,8 +2,7 @@ import React, { useEffect, useState } from "react";
 import bgPanjang from "../assets/25DK702-BG-ALL.jpg";
 import ornamentDayak from "../assets/25DK702-DAYAK.png";
 import { useScrollReveal } from "../hooks/useScrollReveal";
-
-const WEDDING_DATE = new Date("2026-01-25T08:00:00");
+import { weddingConfig } from "../weddingConfig";
 
 interface TimeLeft {
   hari: number;
@@ -98,7 +97,8 @@ const EventCard: React.FC<{
 );
 
 export const PageAcara: React.FC = () => {
-  const { hari, jam, menit, detik } = useCountdown(WEDDING_DATE);
+  const { weddingDate, akadNikah, resepsi } = weddingConfig.acara;
+  const { hari, jam, menit, detik } = useCountdown(weddingDate);
   const sectionRef = useScrollReveal();
 
   return (
@@ -150,18 +150,18 @@ export const PageAcara: React.FC = () => {
         </p>
 
         <EventCard
-          title="Akad Nikah"
-          date="Minggu, 25 Januari 2026"
-          time="08.00 WIB s/d Selesai"
-          location="Kediaman Mempelai Wanita"
-          mapsUrl="https://maps.app.goo.gl/PTNeCWsfhzkpH9Ww9"
+          title={akadNikah.title}
+          date={akadNikah.date}
+          time={akadNikah.time}
+          location={akadNikah.location}
+          mapsUrl={akadNikah.mapsUrl}
         />
         <EventCard
-          title="Resepsi"
-          date="Minggu, 25 Januari 2026"
-          time="09.00 WIB s/d Selesai"
-          location="Kediaman Mempelai Wanita"
-          mapsUrl="https://maps.app.goo.gl/PTNeCWsfhzkpH9Ww9"
+          title={resepsi.title}
+          date={resepsi.date}
+          time={resepsi.time}
+          location={resepsi.location}
+          mapsUrl={resepsi.mapsUrl}
         />
       </div>
     </section>

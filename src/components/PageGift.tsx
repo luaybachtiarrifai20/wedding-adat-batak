@@ -4,14 +4,16 @@ import ornamentRumah from "../assets/25DK702-RUMAH-DAYAK-MERAH.png";
 import bankBRI from "../assets/BANK-BRI-1.png";
 import chipATM from "../assets/chip-atm-1-2-1-1-1-1.png";
 import { useScrollReveal } from "../hooks/useScrollReveal";
+import { weddingConfig } from "../weddingConfig";
 
 export const PageGift: React.FC = () => {
   const [showAccount, setShowAccount] = useState(false);
   const [copied, setCopied] = useState(false);
   const sectionRef = useScrollReveal();
+  const { bankAccount, giftShipping } = weddingConfig.gift;
 
   const handleCopy = () => {
-    navigator.clipboard.writeText("457401019331538");
+    navigator.clipboard.writeText(bankAccount.accountNumber);
     setCopied(true);
     setTimeout(() => setCopied(false), 2000);
   };
@@ -96,13 +98,13 @@ export const PageGift: React.FC = () => {
                 className="text-black text-[18px] font-semibold"
                 style={{ fontFamily: "Poppins, sans-serif" }}>
                 {" "}
-                45740101xxxxx{" "}
+                {bankAccount.accountNumber.substring(0, 8)}xxxxx{" "}
               </p>{" "}
               <p
                 className="text-black text-[16px]"
                 style={{ fontFamily: "Poppins, sans-serif" }}>
                 {" "}
-                KAESANG{" "}
+                {bankAccount.accountName}{" "}
               </p>{" "}
               <button
                 onClick={handleCopy}
@@ -145,19 +147,19 @@ export const PageGift: React.FC = () => {
                   className="text-black text-[13px]"
                   style={{ fontFamily: "Poppins, sans-serif" }}>
                   {" "}
-                  Nama Penerima : Kaesang{" "}
+                  Nama Penerima : {giftShipping.recipientName}{" "}
                 </p>{" "}
                 <p
                   className="text-black text-[13px]"
                   style={{ fontFamily: "Poppins, sans-serif" }}>
                   {" "}
-                  Nomor HP : 0815xxxx{" "}
+                  Nomor HP : {giftShipping.phoneNumber}{" "}
                 </p>{" "}
                 <p
                   className="text-black text-[13px]"
                   style={{ fontFamily: "Poppins, sans-serif" }}>
                   {" "}
-                  Alamat Kirim Hadiah : Surakata{" "}
+                  Alamat Kirim Hadiah : {giftShipping.address}{" "}
                 </p>{" "}
               </div>{" "}
             </div>{" "}

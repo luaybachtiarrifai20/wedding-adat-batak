@@ -1,9 +1,8 @@
 import React from "react";
 import bgPanjang from "../assets/25DK702-BG-ALL.jpg";
 import rumahDayak from "../assets/25DK702-RUMAH-DAYAK-MERAH.png";
-import photoGroom from "../assets/kaesang-gudono-6-e1766729200548.jpg";
-import photoBride from "../assets/kaesang-gudono-2-e1766729217399.jpg";
 import { useScrollReveal } from "../hooks/useScrollReveal";
+import { weddingConfig } from "../weddingConfig";
 
 const InstagramIcon = () => (
   <svg viewBox="0 0 448 512" fill="currentColor" className="w-4 h-4">
@@ -69,6 +68,7 @@ const PersonCard: React.FC<{
 
 export const PageMempelai: React.FC = () => {
   const sectionRef = useScrollReveal();
+  const { quote, quoteReference, groom, bride } = weddingConfig.mempelai;
 
   return (
     <section
@@ -94,17 +94,13 @@ export const PageMempelai: React.FC = () => {
           className="reveal text-white text-[13px] leading-relaxed text-center italic mb-3 px-2"
           style={{ fontFamily: "Lora, serif" }}
         >
-          "Dan di antara tanda-tanda (kebesaran)-Nya ialah Dia menciptakan
-          pasangan-pasangan untukmu dari jenismu sendiri, agar kamu cenderung
-          dan merasa tenteram kepadanya, dan Dia menjadikan di antaramu rasa
-          kasih dan sayang. Sesungguhnya pada yang demikian itu benar-benar
-          terdapat tanda-tanda (kebesaran Allah) bagi kaum yang berpikir."
+          "{quote}"
         </p>
         <p
           className="reveal text-[#F4D95C] text-[15px]"
           style={{ fontFamily: "Lora, serif" }}
         >
-          (QS. Ar-Rum : 21)
+          {quoteReference}
         </p>
       </div>
 
@@ -119,10 +115,10 @@ export const PageMempelai: React.FC = () => {
       >
         <PersonCard
           role="Pengantin Pria"
-          photo={photoGroom}
-          name="Kaesang"
-          desc="Anak Kedua dari<br/>Bapak Joko &amp; Ibu Atik"
-          igUrl="https://instagram.com/kaesangp"
+          photo={groom.photo}
+          name={groom.name}
+          desc={groom.description}
+          igUrl={groom.instagram}
         />
 
         <div
@@ -134,10 +130,10 @@ export const PageMempelai: React.FC = () => {
 
         <PersonCard
           role="Pengantin Wanita"
-          photo={photoBride}
-          name="Erina"
-          desc="Anak Kedua dari<br/>Bapak Anwar &amp; Ibu Reni"
-          igUrl="https://instagram.com/erinagudono"
+          photo={bride.photo}
+          name={bride.name}
+          desc={bride.description}
+          igUrl={bride.instagram}
         />
       </div>
     </section>
