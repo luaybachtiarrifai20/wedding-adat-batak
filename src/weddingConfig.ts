@@ -1,51 +1,51 @@
-import couplePhoto from './assets/kaesang-gudono-1-e1766729171733.jpg';
-import photoGroom from './assets/kaesang-gudono-6-e1766729200548.jpg';
-import photoBride from './assets/kaesang-gudono-2-e1766729217399.jpg';
-import photo1 from './assets/kaesang-gudono-1-e1766729171733.jpg';
-import photo2 from './assets/kaesang-gudono-2-e1766729217399.jpg';
-import photo3 from './assets/kaesang-gudono-6-e1766729200548.jpg';
+import couplePhoto from './assets/couple.png';
+import photoGroom from './assets/cowok01.jpeg';
+import photoBride from './assets/cewek01.jpeg';
+import photo1 from './assets/couple02.png';
+import photo2 from './assets/cewek01.jpeg';
+import photo3 from './assets/cowok01.jpeg';
 
 export const weddingConfig = {
   // Couple Section
   couple: {
-    names: 'Kaesang & Erina',
-    date: 'Minggu, 25 Januari 2026',
+    names: 'Karta & Asih',
+    date: 'Minggu, 26 Juli 2026',
     photo: couplePhoto,
   },
 
   // Mempelai Section
   mempelai: {
-    quote: 'Dan di antara tanda-tanda (kebesaran)-Nya ialah Dia menciptakan pasangan-pasangan untukmu dari jenismu sendiri, agar kamu cenderung dan merasa tenteram kepadanya, dan Dia menjadikan di antaramu rasa kasih dan sayang. Sesungguhnya pada yang demikian itu benar-benar terdapat tanda-tanda (kebesaran Allah) bagi kaum yang berpikir.',
-    quoteReference: '(QS. Ar-Rum : 21)',
+    quote: 'Dan diatas Segalanya kenakanlah Kasih, Sebagai pengingat yang mempersatukan dan menyempurnakan',
+    quoteReference: '(Kolose 3 : 21)',
     groom: {
-      name: 'Kaesang',
-      description: 'Anak Kedua dari<br/>Bapak Joko &amp; Ibu Atik',
+      name: 'Kaharta Karta, SP',
+      description: 'Anak Ke-3 dari<br/>Bapak Johanes Djemini &amp; Ibu Rosapia (Alm)',
       photo: photoGroom,
-      instagram: 'https://instagram.com/kaesangp',
+      instagram: 'https://instagram.com/kharta_borneoz',
     },
     bride: {
-      name: 'Erina',
-      description: 'Anak Kedua dari<br/>Bapak Anwar &amp; Ibu Reni',
+      name: 'Fransiska Eva Kurniasih, S.Pd',
+      description: 'Anak Ke-4 dari<br/>Bapak John Adil, S.Pd (Alm) &amp; Ibu Ancela Susilawati, S.Pd',
       photo: photoBride,
-      instagram: 'https://instagram.com/erinagudono',
+      instagram: 'https://instagram.com/fransiiska_evha',
     },
   },
 
   // Acara Section
   acara: {
-    weddingDate: new Date('2026-01-25T08:00:00'),
+    weddingDate: new Date('2026-07-26T08:00:00'),
     akadNikah: {
-      title: 'Akad Nikah',
-      date: 'Minggu, 25 Januari 2026',
-      time: '08.00 WIB s/d Selesai',
-      location: 'Kediaman Mempelai Wanita',
+      title: 'Acara Pernikahan',
+      date: 'Minggu, 26 Juli 2026',
+      time: '13.00 WIB s/d Selesai',
+      location: 'Rumah Kediaman Ibu Ancela susilawati (Sui Jawa)',
       mapsUrl: 'https://maps.app.goo.gl/PTNeCWsfhzkpH9Ww9',
     },
     resepsi: {
-      title: 'Resepsi',
-      date: 'Minggu, 25 Januari 2026',
-      time: '09.00 WIB s/d Selesai',
-      location: 'Kediaman Mempelai Wanita',
+      title: 'Resepsi Pernikahan',
+      date: 'Minggu, 26 Juli 2026',
+      time: '13.00 WIB s/d Selesai',
+      location: 'Rumah Kediaman Ibu Ancela susilawati (Sui Jawa)',
       mapsUrl: 'https://maps.app.goo.gl/PTNeCWsfhzkpH9Ww9',
     },
   },
@@ -57,10 +57,10 @@ export const weddingConfig = {
 
   // Penutup Section
   penutup: {
-    names: 'Kaesang & Erina',
+    names: 'Karta & Asih',
     socialMedia: {
-      instagram: 'https://www.instagram.com/wekita.id/',
-      whatsapp: 'https://wa.me/message/46S77EFCZCJAN1',
+      instagram: 'https://www.instagram.com/',
+      whatsapp: 'https://wa.me/message/',
     },
   },
 
@@ -68,15 +68,15 @@ export const weddingConfig = {
   gift: {
     bankAccount: {
       bankName: 'BANK BRI',
-      accountNumber: '457401019331538',
-      accountName: 'KAESANG',
+      accountNumber: '056901052237506',
+      accountName: 'Fransiska Eva Kurniasih',
       chipImage: 'chip-atm-1-2-1-1-1-1.png',
       bankLogo: 'BANK-BRI-1.png',
     },
     giftShipping: {
-      recipientName: 'Kaesang',
+      recipientName: 'Karta',
       phoneNumber: '0815xxxx',
-      address: 'Surakata',
+      address: 'Jln Trans Kalimantan Dusun Jaya Paraya Desa Korek',
     },
   },
 };

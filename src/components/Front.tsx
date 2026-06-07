@@ -2,9 +2,9 @@ import React, { useState, useEffect } from "react";
 import { useSearchParams } from "react-router-dom";
 import { collection, query, where, getDocs } from "firebase/firestore";
 import { db } from "../firebaseConfig";
+import { weddingConfig } from "../weddingConfig";
 import bgAll from "../assets/25DK702-BG-ALL.jpg";
 import ornamentDayak from "../assets/25DK702-DAYAK.png";
-import couplePhoto from "../assets/kaesang-gudono-1-e1766729171733.jpg";
 
 interface FrontProps {
   onOpen: () => void;
@@ -91,7 +91,7 @@ export const Front: React.FC<FrontProps> = ({ onOpen }) => {
           <div 
             className="absolute inset-0"
             style={{
-              backgroundImage: `url(${couplePhoto})`,
+              backgroundImage: `url(${weddingConfig.couple.photo})`,
               backgroundSize: 'cover',
               backgroundPosition: 'top center'
             }}
@@ -116,7 +116,7 @@ export const Front: React.FC<FrontProps> = ({ onOpen }) => {
             className="text-[33px] text-[#F8BB63] mb-6 font-normal drop-shadow-md"
             style={{ fontFamily: '"Philosopher", sans-serif' }}
           >
-            Kaesang & Erina
+            {weddingConfig.couple.names}
           </h1>
           
           <div className="flex flex-col items-center gap-1 mb-8">
