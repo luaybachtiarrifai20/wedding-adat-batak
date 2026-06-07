@@ -1,12 +1,16 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import bgPanjang from '../assets/25DK702-BG-ALL.jpg';
 import ornamentDayak from '../assets/25DK702-DAYAK.png';
 import { useScrollReveal } from '../hooks/useScrollReveal';
+import { collection, addDoc, serverTimestamp, getDocs, query, orderBy, Timestamp } from 'firebase/firestore';
+import { db } from '../firebaseConfig';
 
 interface Comment {
+  id?: string;
   name: string;
   message: string;
   attendance: string;
+  createdAt?: Timestamp;
 }
 
 export const PageUcapan: React.FC = () => {
@@ -15,15 +19,57 @@ export const PageUcapan: React.FC = () => {
   const [attendance, setAttendance] = useState('');
   const [comments, setComments] = useState<Comment[]>([]);
   const [showForm, setShowForm] = useState(false);
+  const [loading, setLoading] = useState(false);
   const sectionRef = useScrollReveal();
 
-  const handleSubmit = (e: React.FormEvent) => {
+  // Fetch comments from Firebase on component mount
+  useEffect(() => {
+    const fetchComments = async () => {
+      try {
+        const commentsRef = collection(db, 'comments');
+        const q = query(commentsRef, orderBy('createdAt', 'desc'));
+        const querySnapshot = await getDocs(q);
+        const commentsData = querySnapshot.docs.map(doc => ({
+          id: doc.id,
+          ...doc.data()
+        })) as Comment[];
+        setComments(commentsData);
+      } catch (error) {
+        console.error('Error fetching comments:', error);
+      }
+    };
+
+    fetchComments();
+  }, []);
+
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     if (name && message && attendance) {
-      setComments([...comments, { name, message, attendance }]);
-      setName('');
-      setMessage('');
-      setAttendance('');
+      setLoading(true);
+      try {
+        await addDoc(collection(db, 'comments'), {
+          name: name.trim(),
+          message: message.trim(),
+          attendance,
+          createdAt: serverTimestamp(),
+        });
+        setName('');
+        setMessage('');
+        setAttendance('');
+        // Refresh comments
+        const commentsRef = collection(db, 'comments');
+        const q = query(commentsRef, orderBy('createdAt', 'desc'));
+        const querySnapshot = await getDocs(q);
+        const commentsData = querySnapshot.docs.map(doc => ({
+          id: doc.id,
+          ...doc.data()
+        })) as Comment[];
+        setComments(commentsData);
+      } catch (error) {
+        console.error('Error adding comment:', error);
+      } finally {
+        setLoading(false);
+      }
     }
   };
 
@@ -169,13 +215,14 @@ export const PageUcapan: React.FC = () => {
           </select>
           <button
             type="submit"
-            className="w-full py-3 rounded-[8px] text-white text-[14px] font-medium hover:opacity-90 transition-opacity"
+            disabled={loading}
+            className="w-full py-3 rounded-[8px] text-white text-[14px] font-medium hover:opacity-90 transition-opacity disabled:opacity-50 disabled:cursor-not-allowed"
             style={{
               backgroundImage: 'linear-gradient(180deg, #F8BB63 0%, #D48E28 100%)',
               fontFamily: 'Poppins, sans-serif',
             }}
           >
-            Kirim
+            {loading ? 'Mengirim...' : 'Kirim'}
           </button>
         </form>
 
