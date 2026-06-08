@@ -5,6 +5,7 @@ import { db } from "../firebaseConfig";
 import { weddingConfig } from "../weddingConfig";
 import bgAll from "../assets/25DK702-BG-ALL.jpg";
 import ornamentDayak from "../assets/25DK702-DAYAK.png";
+import { playBackgroundMusic } from './MusicPlayer';
 
 interface FrontProps {
   onOpen: () => void;
@@ -14,6 +15,11 @@ export const Front: React.FC<FrontProps> = ({ onOpen }) => {
   const [searchParams] = useSearchParams();
   const [guestName, setGuestName] = useState("Nama Tamu");
   const [loading, setLoading] = useState(true);
+
+  const handleOpenInvitation = async () => {
+  await playBackgroundMusic();
+  onOpen();
+  };
 
   useEffect(() => {
     const fetchGuestName = async () => {
@@ -128,11 +134,14 @@ export const Front: React.FC<FrontProps> = ({ onOpen }) => {
             </p>
           </div>
           
-          <button 
-            onClick={onOpen}
-            className="flex items-center gap-2 font-['Poppins'] text-[12px] font-medium text-black px-[20px] py-[11px] rounded-[27px] hover:opacity-90 transition-opacity"
-            style={{ backgroundImage: 'linear-gradient(180deg, #F8BB63 0%, #D08B27 100%)' }}
-          >
+          <button
+  onClick={handleOpenInvitation}
+  className="flex items-center gap-2 font-['Poppins'] text-[12px] font-medium text-black px-[20px] py-[11px] rounded-[27px] hover:opacity-90 transition-opacity"
+  style={{
+    backgroundImage:
+      'linear-gradient(180deg, #F8BB63 0%, #D08B27 100%)',
+  }}
+>
             <svg 
               className="w-4 h-4 text-black" 
               viewBox="0 0 512 512" 
