@@ -7,6 +7,7 @@ import { PageGaleri } from './components/PageGaleri';
 import { PageGift } from './components/PageGift';
 import { PageUcapan } from './components/PageUcapan';
 import { PagePenutup } from './components/PagePenutup';
+import { MusicPlayer } from './components/MusicPlayer';
 import './App.css';
 
 function App() {
@@ -24,6 +25,7 @@ function App() {
         className="relative w-full max-w-[414px] shadow-2xl"
         style={{ backgroundColor: '#5F131A', minHeight: '100dvh' }}
       >
+        <MusicPlayer />
         {!isOpen ? (
           /* ===== HALAMAN COVER ===== */
           <div className="w-full h-screen">

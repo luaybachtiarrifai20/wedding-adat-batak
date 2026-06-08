@@ -84,8 +84,8 @@ export const Front: React.FC<FrontProps> = ({ onOpen }) => {
 
         {/* The Card containing ONLY the couple's photo */}
         <div 
-          className="relative w-full rounded-[20px] overflow-hidden shadow-lg border-[2px] border-[#8F313A] mb-8"
-          style={{ height: '45vh', minHeight: '350px', maxHeight: '450px' }}
+          className="relative w-[80%] rounded-[20px] overflow-hidden shadow-lg border-[2px] border-[#8F313A] mb-8"
+          style={{ height: '45vh', minHeight: '250px', maxHeight: '300px' }}
         >
           {/* Photo Background */}
           <div 

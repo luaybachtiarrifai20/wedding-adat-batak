@@ -22,19 +22,16 @@ const PersonCard: React.FC<{
     style={{
       backgroundColor: "rgba(87,11,16,0.88)",
       border: "3px solid #F8BB63",
-    }}
-  >
+    }}>
     <p
       className="text-[#F8BB63] text-[14px] font-semibold mb-3"
-      style={{ fontFamily: "Philosopher, sans-serif" }}
-    >
+      style={{ fontFamily: "Philosopher, sans-serif" }}>
       {role}
     </p>
     {/* Photo with oval clip */}
     <div
       className="w-[130px] h-[165px] overflow-hidden mb-3"
-      style={{ borderRadius: "50% 50% 48% 48% / 42% 42% 38% 38%" }}
-    >
+      style={{ borderRadius: "50% 50% 48% 48% / 42% 42% 38% 38%" }}>
       <img
         src={photo}
         alt={name}
@@ -42,13 +39,12 @@ const PersonCard: React.FC<{
       />
     </div>
     <h2
-      className="text-[#F8BB63] text-[26px] font-semibold mb-1"
-      style={{ fontFamily: "Philosopher, sans-serif" }}
-    >
+      className="text-[#F8BB63] text-[22px] font-semibold mb-1"
+      style={{ fontFamily: "Philosopher, sans-serif" }}>
       {name}
     </h2>
     <p
-      className="text-white text-[12px] mb-3 leading-relaxed"
+      className="text-white text-[11px] mb-3 leading-relaxed"
       style={{ fontFamily: "Poppins, sans-serif" }}
       dangerouslySetInnerHTML={{ __html: desc }}
     />
@@ -58,8 +54,7 @@ const PersonCard: React.FC<{
         target="_blank"
         rel="noopener noreferrer"
         className="w-8 h-8 rounded-full flex items-center justify-center transition-transform hover:scale-110"
-        style={{ backgroundColor: "#F8BB63", color: "#570707" }}
-      >
+        style={{ backgroundColor: "#F8BB63", color: "#570707" }}>
         <InstagramIcon />
       </a>
     )}
@@ -73,9 +68,9 @@ export const PageMempelai: React.FC = () => {
   return (
     <section
       ref={sectionRef as React.RefObject<HTMLElement>}
-      className="relative w-full flex flex-col items-center overflow-hidden"
-    >
+      className="relative w-full flex flex-col items-center overflow-hidden">
       {/* ---- Ayat Al-Quran Section ---- */}
+
       <div
         className="w-full flex flex-col items-center px-6 py-10"
         style={{
@@ -83,8 +78,12 @@ export const PageMempelai: React.FC = () => {
           backgroundSize: "cover",
           backgroundPosition: "center",
           backgroundColor: "rgba(87,11,16,0.87)",
-        }}
-      >
+        }}>
+        <p
+          className="reveal text-white text-[13px] leading-relaxed text-center italic mb-3 px-2"
+          style={{ fontFamily: "Lora, serif" }}>
+          Adil Ka' Talino Bacuramin Ka' Saruga Basengat Ka' Jubata Arus3x
+        </p>
         <img
           src={rumahDayak}
           alt="Rumah Dayak"
@@ -92,14 +91,12 @@ export const PageMempelai: React.FC = () => {
         />
         <p
           className="reveal text-white text-[13px] leading-relaxed text-center italic mb-3 px-2"
-          style={{ fontFamily: "Lora, serif" }}
-        >
+          style={{ fontFamily: "Lora, serif" }}>
           "{quote}"
         </p>
         <p
           className="reveal text-[#F4D95C] text-[15px]"
-          style={{ fontFamily: "Lora, serif" }}
-        >
+          style={{ fontFamily: "Lora, serif" }}>
           {quoteReference}
         </p>
       </div>
@@ -111,8 +108,7 @@ export const PageMempelai: React.FC = () => {
           backgroundImage: `url(${bgPanjang})`,
           backgroundSize: "cover",
           backgroundPosition: "top center",
-        }}
-      >
+        }}>
         <PersonCard
           role="Pengantin Pria"
           photo={groom.photo}
@@ -123,8 +119,7 @@ export const PageMempelai: React.FC = () => {
 
         <div
           className="reveal text-white text-[28px] font-bold"
-          style={{ fontFamily: "Cinzel Decorative, serif" }}
-        >
+          style={{ fontFamily: "Cinzel Decorative, serif" }}>
           &amp;
         </div>
 
