@@ -22,7 +22,7 @@ export const MusicPlayer: React.FC = () => {
       } else {
         audioRef.current.play();
       }
-      setIsPlaying(isPlaying);
+      setIsPlaying(!isPlaying);
     }
   };
 
