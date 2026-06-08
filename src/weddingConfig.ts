@@ -1,5 +1,4 @@
-import frontPhoto from './assets/vektor-dayak-eye-teeth.webp';
-import couplePhoto from './assets/couple.png';
+import couplePhoto from './assets/couple_kartun.jpeg';
 import photoGroom from './assets/cowok01.jpeg';
 import photoBride from './assets/cewek01.jpeg';
 import photo1 from './assets/couple02.png';
@@ -10,7 +9,7 @@ export const weddingConfig = {
   // Front
   front: {
     names: 'Karta & Asih',
-    photo: frontPhoto,
+    photo: couplePhoto,
   },
 
   // Couple Section
