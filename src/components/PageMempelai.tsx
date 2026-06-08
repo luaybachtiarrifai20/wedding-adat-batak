@@ -39,12 +39,12 @@ const PersonCard: React.FC<{
       />
     </div>
     <h2
-      className="text-[#F8BB63] text-[22px] font-semibold mb-1"
+      className="text-[#F8BB63] text-[18px] md:text-[24px] font-semibold mb-1"
       style={{ fontFamily: "Philosopher, sans-serif" }}>
       {name}
     </h2>
     <p
-      className="text-white text-[11px] mb-3 leading-relaxed"
+      className="text-white text-[10px] md:text-[12px] mb-3 leading-relaxed"
       style={{ fontFamily: "Poppins, sans-serif" }}
       dangerouslySetInnerHTML={{ __html: desc }}
     />
