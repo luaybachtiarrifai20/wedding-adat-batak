@@ -27,14 +27,14 @@ export const weddingConfig = {
     groom: {
       name: "Kaharta Karta, SP",
       description:
-        "Anak Ke-3 dari<br/>Bapak Johanes Djemini &amp; Ibu Rosapia †",
+        "Anak Ke-3 dari<br/>Bapak Johanes Djemini &amp; Ibu Rosapia (†)",
       photo: photoGroom,
       instagram: "https://instagram.com/kharta_borneoz",
     },
     bride: {
       name: "Fransiska Eva Kurniasih, S.Pd",
       description:
-        "Anak Ke-4 dari<br/>Bapak John Adil, S.Pd † &amp; Ibu Ancela Susilawati, S.Pd",
+        "Anak Ke-4 dari<br/>Bapak John Adil, S.Pd (†) &amp; Ibu Ancela Susilawati, S.Pd",
       photo: photoBride,
       instagram: "https://instagram.com/fransiiska_evha",
     },
