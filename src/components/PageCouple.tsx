@@ -1,5 +1,5 @@
 import React from "react";
-import bgAll from "../assets/25DK702-BG-ALL.jpg";
+import bgAll from "../assets/bg_utama.png";
 import ornamentAB from "../assets/25DK702-ORNAMEN-AB-scaled-e1765876061184.png";
 import framePro from "../assets/25DK702-FRAME-PRO.png";
 import { weddingConfig } from "../weddingConfig";

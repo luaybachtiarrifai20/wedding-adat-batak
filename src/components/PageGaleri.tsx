@@ -1,5 +1,5 @@
 import React from "react";
-import bgAll from "../assets/25DK702-BG-ALL.jpg";
+import bgAll from "../assets/bg_utama.png";
 import { weddingConfig } from "../weddingConfig";
 
 export const PageGaleri: React.FC = () => {

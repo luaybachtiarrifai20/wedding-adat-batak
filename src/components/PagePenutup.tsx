@@ -1,5 +1,5 @@
 import React from 'react';
-import bgPanjang from '../assets/25DK702-BG-ALL.jpg';
+import bgPanjang from '../assets/bg_utama.png';
 import ornamentOrnamen from '../assets/25DK702-ORNAMEN-AB-scaled-e1765876061184.png';
 import { useScrollReveal } from '../hooks/useScrollReveal';
 import { weddingConfig } from '../weddingConfig';

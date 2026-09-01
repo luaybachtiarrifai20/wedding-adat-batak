@@ -1,5 +1,5 @@
 import { useState } from "react";
-import bgPanjang from "../assets/25DK702-BG-ALL.jpg";
+import bgPanjang from "../assets/bg_utama.png";
 import ornamentRumah from "../assets/25DK702-RUMAH-DAYAK-MERAH.png";
 import bankBRI from "../assets/BANK-BRI-1.png";
 import chipATM from "../assets/chip-atm-1-2-1-1-1-1.png";

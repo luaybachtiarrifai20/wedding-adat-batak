@@ -3,7 +3,7 @@ import { Front } from './components/Front';
 import { PageCouple } from './components/PageCouple';
 import { PageMempelai } from './components/PageMempelai';
 import { PageAcara } from './components/PageAcara';
-import { PageGaleri } from './components/PageGaleri';
+// import { PageGaleri } from './components/PageGaleri';
 import { PageGift } from './components/PageGift';
 import { PageUcapan } from './components/PageUcapan';
 import { PagePenutup } from './components/PagePenutup';
@@ -37,7 +37,7 @@ function App() {
             <PageCouple />
             <PageMempelai />
             <PageAcara />
-            <PageGaleri />
+            {/* <PageGaleri /> */}
             <PageGift />
             <PageUcapan />
             <PagePenutup />

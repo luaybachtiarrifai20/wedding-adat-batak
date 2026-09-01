@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import bgPanjang from "../assets/25DK702-BG-ALL.jpg";
+import bgPanjang from "../assets/bg_utama.png";
 import ornamentDayak from "../assets/25DK702-DAYAK.png";
 import { useScrollReveal } from "../hooks/useScrollReveal";
 import { weddingConfig } from "../weddingConfig";
@@ -97,7 +97,7 @@ const EventCard: React.FC<{
 );
 
 export const PageAcara: React.FC = () => {
-  const { weddingDate, akadNikah, resepsi } = weddingConfig.acara;
+  const { weddingDate, akadNikah } = weddingConfig.acara;
   const { hari, jam, menit, detik } = useCountdown(weddingDate);
   const sectionRef = useScrollReveal();
 
@@ -146,7 +146,7 @@ export const PageAcara: React.FC = () => {
         </div>
 
         <p className="reveal text-white text-[13px] text-center leading-relaxed" style={{ fontFamily: "Poppins, sans-serif" }}>
-          Karena Kasih-Nya, bersama ini kami mengundang Bapak/Ibu/Saudara/i untuk hadir dalam acara adat (Gawe Adat) pernikahan kami yang akan dilaksanakan pada:
+          Bersama ini kami mengundang Bapak/Ibu/Saudara/i untuk hadir dalam Upacara Adat Manusa yadnya pawiwahan pernikahan kami yang akan dilaksanakan pada:
         </p>
 
         <EventCard
@@ -156,13 +156,13 @@ export const PageAcara: React.FC = () => {
           location={akadNikah.location}
           mapsUrl={akadNikah.mapsUrl}
         />
-        <EventCard
+        {/* <EventCard
           title={resepsi.title}
           date={resepsi.date}
           time={resepsi.time}
           location={resepsi.location}
           mapsUrl={resepsi.mapsUrl}
-        />
+        /> */}
       </div>
     </section>
   );

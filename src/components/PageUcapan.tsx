@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import bgPanjang from '../assets/25DK702-BG-ALL.jpg';
+import bgPanjang from '../assets/bg_utama.png';
 import ornamentDayak from '../assets/25DK702-DAYAK.png';
 import { useScrollReveal } from '../hooks/useScrollReveal';
 import { collection, addDoc, serverTimestamp, getDocs, query, orderBy, Timestamp } from 'firebase/firestore';

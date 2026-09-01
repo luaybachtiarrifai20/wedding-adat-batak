@@ -3,8 +3,8 @@ import { useSearchParams } from "react-router-dom";
 import { collection, query, where, getDocs } from "firebase/firestore";
 import { db } from "../firebaseConfig";
 import { weddingConfig } from "../weddingConfig";
-import bgAll from "../assets/25DK702-BG-ALL.jpg";
-import ornamentDayak from "../assets/25DK702-DAYAK.png";
+import bgAll from "../assets/bg_utama.png";
+// import ornamentDayak from "../assets/25DK702-DAYAK.png";
 import { playBackgroundMusic } from './MusicPlayer';
 
 interface FrontProps {
@@ -80,13 +80,13 @@ export const Front: React.FC<FrontProps> = ({ onOpen }) => {
       <div className="w-[90%] max-w-[400px] flex flex-col items-center mt-12 relative z-10">
         
         {/* Ornaments - Overlapping the card */}
-        <div className="w-full flex justify-center absolute -top-[50px] z-20">
+        {/* <div className="w-full flex justify-center absolute -top-[50px] z-20">
           <img 
             src={ornamentDayak} 
             alt="Ornament" 
             className="w-[43%] object-contain drop-shadow-md"
           />
-        </div>
+        </div> */}
 
         {/* The Card containing ONLY the couple's photo */}
         <div 
